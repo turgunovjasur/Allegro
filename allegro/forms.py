@@ -2,7 +2,13 @@ from django import forms
 from .models import *
 
 
-class ProfileForm(forms.ModelForm):
+class Shaxsiy_kabinetForm(forms.ModelForm):
     class Meta:
-        model = Profile
+        model = Shaxsiy_kabinet
+        fields = "__all__"
+
+
+class BolimForm(forms.ModelForm):
+    class Meta:
+        model = Bolim
         fields = "__all__"

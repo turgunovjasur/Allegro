@@ -1,8 +1,14 @@
 from rest_framework import serializers
-from .models import Profile
+from .models import Shaxsiy_kabinet, Bolim
 
 
-class AuthorSerializer(serializers.ModelSerializer):
+class Shaxsiy_kabinetSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Profile
+        model = Shaxsiy_kabinet
         fields = "__all__"
+
+
+class BolimSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Bolim
+        fields = '__all__'
