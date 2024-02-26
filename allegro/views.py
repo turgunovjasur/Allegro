@@ -1,16 +1,30 @@
+from rest_framework import viewsets
 from rest_framework.viewsets import ModelViewSet
-from .models import Shaxsiy_kabinet, Bolim
-from .serializers import Shaxsiy_kabinetSerializer, BolimSerializer
+from .models import Shaxs, Bolim, Xabarlar, Ariza
+from .serializers import ShaxsSerializer, BolimSerializer, XabarlarSerializer, ArizaSerializer
 
 
-class Shaxsiy_kabinetViewSet(ModelViewSet):
-    queryset = Shaxsiy_kabinet.objects.all()
-    serializer_class = Shaxsiy_kabinetSerializer
+class ShaxsViewSet(ModelViewSet):
+    queryset = Shaxs.objects.all()
+    serializer_class = ShaxsSerializer
 
 
 class BolimViewSet(ModelViewSet):
     queryset = Bolim.objects.all()
     serializer_class = BolimSerializer
+
+
+class XabarlarViewSet(viewsets.ModelViewSet):
+    queryset = Xabarlar.objects.all()
+    serializer_class = XabarlarSerializer
+
+
+class ArizaViewSet(viewsets.ModelViewSet):
+    queryset = Ariza.objects.all()
+    serializer_class = ArizaSerializer
+
+
+
 
 
 
