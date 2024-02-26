@@ -1,7 +1,10 @@
-from django.contrib.auth import admin
-from django.urls import path
-from .views import *
+from django.urls import path, include
+from rest_framework import routers
+from .views import AuthorViewSet
+
+router = routers.DefaultRouter()
+router.register(r"profile", AuthorViewSet)
 
 urlpatterns = [
-   path('', admin.urls)
+    path('', include(router.urls))
 ]
