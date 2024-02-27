@@ -32,14 +32,21 @@ class Xabarlar(models.Model):
 
 
 class Ariza(models.Model):
-    xabar = models.ForeignKey(Xabarlar, related_name='ariza', on_delete=models.CASCADE)
+    xabar = models.ForeignKey(Xabarlar, related_name='xabarlar', on_delete=models.CASCADE)
     shaxs = models.ForeignKey(Shaxs, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Men: {self.Shaxs.ism} {self.Shaxs.familiya}ning birinchi arizam!"
+        return f"Men: {self.shaxs.ism} {self.shaxs.familiya}ning birinchi arizam!"
 
 
 
 
+# allegro_app/models.py
+class Message(models.Model):
+    jonatuvchi = models.ForeignKey(Shaxs, on_delete=models.CASCADE, related_name='sent_messages')
+    oluvchi = models.ForeignKey(Shaxs, on_delete=models.CASCADE, related_name='received_messages')
+    mavzu = models.CharField(max_length=200)
+    tarkib = models.TextField()
+    qoshilgan_vaqt = models.DateTimeField(auto_now_add=True)
 
 

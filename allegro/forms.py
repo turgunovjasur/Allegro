@@ -26,4 +26,7 @@ class ArizaForm(forms.ModelForm):
         fields = "__all__"
 
 
-
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['jonatuvchi', 'oluvchi', 'mavzu', 'tarkib']

@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.viewsets import ModelViewSet
-from .models import Shaxs, Bolim, Xabarlar, Ariza
-from .serializers import ShaxsSerializer, BolimSerializer, XabarlarSerializer, ArizaSerializer
+from .models import *
+from .serializers import *
 
 
 class ShaxsViewSet(ModelViewSet):
@@ -24,7 +24,9 @@ class ArizaViewSet(viewsets.ModelViewSet):
     serializer_class = ArizaSerializer
 
 
-
+class MessageViewSet(viewsets.ModelViewSet):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
 
 
 
