@@ -41,12 +41,5 @@ class Ariza(models.Model):
 
 
 
-# allegro_app/models.py
-class Message(models.Model):
-    jonatuvchi = models.ForeignKey(Shaxs, on_delete=models.CASCADE, related_name='sent_messages')
-    oluvchi = models.ForeignKey(Shaxs, on_delete=models.CASCADE, related_name='received_messages')
-    mavzu = models.CharField(max_length=200)
-    tarkib = models.TextField()
-    qoshilgan_vaqt = models.DateTimeField(auto_now_add=True)
 
 

@@ -24,12 +24,9 @@ class ArizaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ariza
         fields = '__all__'
+        depth = 1
 
 
-class MessageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Message
-        fields = '__all__'
 
 
 
