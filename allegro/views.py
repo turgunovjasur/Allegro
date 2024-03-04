@@ -24,6 +24,11 @@ class ArizaViewSet(viewsets.ModelViewSet):
     serializer_class = ArizaSerializer
 
 
+class YangiliklarViewSet(viewsets.ModelViewSet):
+    queryset = Yangiliklar.objects.all()
+    serializer_class = YangiliklarSerializer
+
+
 
 
 

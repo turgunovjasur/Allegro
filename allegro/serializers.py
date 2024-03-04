@@ -27,6 +27,7 @@ class ArizaSerializer(serializers.ModelSerializer):
         depth = 1
 
 
-
-
-
+class YangiliklarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Yangiliklar
+        fields = '__all__'

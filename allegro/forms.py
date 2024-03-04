@@ -26,4 +26,10 @@ class ArizaForm(forms.ModelForm):
         fields = "__all__"
 
 
+class YangiliklarForm(forms.ModelForm):
+    class Meta:
+        model = Yangiliklar
+        fields = "__all__"
+
+
 

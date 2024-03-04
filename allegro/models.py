@@ -3,6 +3,7 @@ from django.db import models
 
 class Bolim(models.Model):
     nomi = models.CharField(max_length=255)
+    shaxs = models.ManyToManyField('Shaxs', related_name='bolimlar')
 
     def __str__(self):
         return self.nomi
@@ -11,7 +12,7 @@ class Bolim(models.Model):
 class Shaxs(models.Model):
     ism = models.CharField(null=False, blank=False, max_length=10)
     familiya = models.CharField(null=False, blank=False, max_length=100)
-    bolim = models.ForeignKey(Bolim, null=True, on_delete=models.SET_NULL)
+    bolim = models.ForeignKey(Bolim, null=True, on_delete=models.SET_NULL, related_name='shaxslar')
     tel = models.CharField(null=False, blank=False, max_length=100, unique=True)
     address = models.CharField(max_length=255)
     qoshilgan_vaqt = models.DateTimeField(auto_now_add=True)
@@ -32,3 +33,14 @@ class Ariza(models.Model):
     xabar = models.ForeignKey(Xabarlar, related_name='xabarlar', on_delete=models.CASCADE)
     shaxs = models.ForeignKey(Shaxs, on_delete=models.CASCADE)
     matn = models.TextField(null=True)
+
+
+class Yangiliklar(models.Model):
+    yangilik = models.TextField(null=True)
+
+    def __str__(self):
+        return self.yangilik
+
+
+
+
